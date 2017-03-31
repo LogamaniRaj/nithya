@@ -1,0 +1,113 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    ViewBag.Title = "ExperienceDetails";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryui")
+@Styles.Render("~/Content/themes/base/css")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#JSJoiningDate").datepicker({ dateFormat: "dd/mm/yy", changeMonth: true, changeYear: true });
+        $("#JSEndDate").datepicker({ dateFormat: "dd/mm/yy", changeMonth: true, changeYear: true });
+    });
+</script>
+    
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <br />
+    <fieldset>
+        <legend style="font-family:Forte">Experience Details</legend>
+        <br />
+        <table align="center" style="text-align:left; font-family:Forte;">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSCompanyName)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSCompanyName)
+                        @Html.ValidationMessageFor(model => model.JSCompanyName)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSJoiningDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.TextBox("JSJoiningDate", "")
+                        @Html.ValidationMessageFor(model => model.JSJoiningDate)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSEndDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.TextBox("JSEndDate", "")
+                        @Html.ValidationMessageFor(model => model.JSEndDate)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSDesignation)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSDesignation)
+                        @Html.ValidationMessageFor(model => model.JSDesignation)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSExperience)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSExperience)
+                        @Html.ValidationMessageFor(model => model.JSExperience)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit" style="height:35px;font-size:22px;font-family:Forte;" />
+                </td>
+            </tr>     
+            <tr>
+                <td colspan="2" align="center">
+                    @ViewBag.addexperience
+                </td>
+            </tr>
+            </table>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+

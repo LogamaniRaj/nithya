@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl>
+
+
+<table align="center" border="1" style="text-align:center;align-content:center;width:1300px;font-family:Forte; ">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.JSSkill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSVersion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSLastUsed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSSkillExperience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSProjectTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSDuration)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JSSkill)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSLastUsed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSSkillExperience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSProjectTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSDuration)
+            </td>
+
+            <td>@Html.ActionLink("Edit", "EditSkillSet", new { JSSkill = item.JSSkill })</td>
+        </tr>
+    }
+
+</table>

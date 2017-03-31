@@ -1,0 +1,128 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    ViewBag.Title = "SkillSet";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryui")
+@Styles.Render("~/Content/themes/base/css")
+<script type="text/javascript">
+    $(document).ready(function () { $("#JSLastUsed").datepicker({ dateFormat: "dd/mm/yy", changeMonth: true, changeYear: true }); });
+</script>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <br />
+    <fieldset>
+        <legend style="font-family:Forte">Skill Set</legend>
+        <br />
+        <table align="center" style="text-align:left; font-family:Forte;">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSSkill)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSSkill)
+                        @Html.ValidationMessageFor(model => model.JSSkill)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSVersion)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSVersion)
+                        @Html.ValidationMessageFor(model => model.JSVersion)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSLastUsed)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.TextBox("JSLastUsed", "")
+                        @Html.ValidationMessageFor(model => model.JSLastUsed)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSSkillExperience)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSSkillExperience)
+                        @Html.ValidationMessageFor(model => model.JSSkillExperience)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSProjectTitle)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSProjectTitle)
+                        @Html.ValidationMessageFor(model => model.JSProjectTitle)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSDuration)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSDuration)
+                        @Html.ValidationMessageFor(model => model.JSDuration)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit" style="height:35px;font-size:22px;font-family:Forte;" />
+                </td>
+            </tr>     
+                 
+            <tr>
+                <td colspan="2" align="center">
+                    @ViewBag.addskillset
+
+                </td>
+            </tr>
+         </table>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+
+

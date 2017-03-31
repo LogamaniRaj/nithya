@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div align="center">
+        <table>
+            <tr>
+                <td>
+                    <img height="350" width="1400" src="~/Images/logo-1-opportune.png">
+                </td>
+            </tr>
+        </table>
+        <table style="width:1400px;font-size:25px;border:solid;border-width:3px;text-align:center">
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="5" align="right" style="font-size:25px;color:black;font-family:Forte;font-weight:bold">@User.Identity.Name</td>
+                <td><img height="40" width="40" src="~/Images/female.jpg"></td>
+
+            </tr>
+            <tr style="font-size:30px;">
+                <td>@Html.ActionLink("My Profile", "ViewEmpProfile", "Home", new { Style = "Color:black; font-family:forte;" }) </td>
+                <td>@Html.ActionLink("Add Job", "AddJob", "Home", new { Style = "Color:black; font-family:forte;" }) </td>                
+                <td> @Html.ActionLink("View Applications", "ViewAppliedJob", "Home", new { Style = "Color:black; font-family:forte;" })</td>
+                <td>@Html.ActionLink("Log out", "EmpLogout", "Home", new { Style = "Color:black; font-family:forte;" })</td>
+            </tr>
+            <tr>
+                <td colspan="6">@RenderBody()</td>
+            </tr>
+            <tr><td colspan="6" align="left" style="font-size:25px;color:black;font-family:Forte;font-weight:bold">   About Us   </td></tr>
+            <tr>
+                <td colspan="6" align="left" style="font-size: 20px; color: black; text-align: justify;font-family:Forte;">
+                    We're in hiring mode. Developers, sales, marketing, support... If you think you have a set of skills that can help take Opportunity to the next level, tell us why. If you're talented, we'll find a spot for you.
+                    Opportune Door is an Indian worldwide employment-related search engine for job listings launched in March,2017. It is currently available in over 60 countries,developed by Sumathi Rajendran.
+                    Each month, Opportune Door discovers millions of new leads among our member professional networks – resulting in countless numbers of job opportunities and more. See who within your network already has opportunities waiting for you.
+                </td>
+            </tr>
+            <tr><td colspan="6" align="left" style="font-size:25px;color:black;font-family:Forte;font-weight:bold">Cookie Disclaimer</td></tr>
+            <tr>
+                <td colspan="6" align="left" style="font-size:20px;color:black;text-align:justify;font-family:Forte;">
+                    This site uses cookies in order to improve your user experience and to provide content tailored specifically to your interests. Detailed information on the use of cookies on this website is provided in our Privacy Policy. You can also manage your preferences there. By using this website, you consent to the use of cookies.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" align="left" style="font-size: 20px; color: black; font-family: Forte;">@DateTime.Now.ToLongDateString()</td>
+            </tr>
+            <tr>
+                <td colspan="6" align="left" style="font-size: 15px; color: gray; font-family: Forte;">
+                    © Copyright Agency and contributors 2017. ABN 53 001 228 799
+                </td>
+            </tr>          
+        </table>
+
+    </div>
+</body>
+</html>
+

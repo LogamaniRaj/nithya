@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FirstPage</title>
+</head>
+
+<body  style="background-image:url(/Images/FirstPage.jpg);background-size:cover;background-repeat:no-repeat;">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  
+    <table align="center" style="border:solid;border-color:black;border-width:thick;background-color:gray;height:100px;width:200px; font-family:Forte;">
+        <tr>
+            <td>
+                @Html.ActionLink("FIND A JOB", "Login", "Home", new { Style = "Color:black;font-size:30px;" })
+            </td>
+            <td>
+        </tr>
+        </table>
+    <br />
+        <table align="center" style="border:solid;border-color:black;border-width:thick;background-color:gray;height:100px;width:200px; font-family:Forte;">
+            <tr>
+                <td>
+                    @Html.ActionLink("POST A JOB", "EmployerLogin", "Home", new { Style = "Color:black;font-size:30px" })
+                </td>
+            </tr>
+
+        </table>
+</body>
+</html>

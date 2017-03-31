@@ -1,0 +1,126 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    ViewBag.Title = "Preference";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <br />
+    <fieldset>
+        <legend style="font-family:Forte">Preference</legend>
+        <br />
+        <table align="center" style="text-align:left;font-family:Forte;">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSLocation1)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSLocation1, ViewBag.cities as IEnumerable<SelectListItem>, "Select", new { Style = "width:180px" })
+                        @Html.ValidationMessageFor(model => model.JSLocation1)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSLocation2)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSLocation2, ViewBag.cities as IEnumerable<SelectListItem>, "Select", new { Style = "width:180px" })
+                        @Html.ValidationMessageFor(model => model.JSLocation2)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSRelocation)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.RadioButtonFor(model => model.JSRelocation, "Yes")
+                        @Html.LabelFor(model => model.JSRelocation, "Yes")
+              
+                        @Html.RadioButtonFor(model => model.JSRelocation, "No")
+                        @Html.LabelFor(model => model.JSRelocation, "No")
+                        @Html.ValidationMessageFor(model => model.JSRelocation)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSEmploymentType)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSEmploymentType, ViewBag.emptype as IEnumerable<SelectListItem>, "Select", new { Style = "width:180px" })
+                        @Html.ValidationMessageFor(model => model.JSEmploymentType)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSExpectedSalary)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSExpectedSalary)
+                        @Html.ValidationMessageFor(model => model.JSExpectedSalary)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSStatus)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.RadioButtonFor(model => model.JSStatus, "ON")
+                        @Html.LabelFor(model => model.JSStatus, "ON")
+                        @Html.RadioButtonFor(model => model.JSStatus, "OFF")
+                        @Html.LabelFor(model => model.JSStatus, "OFF")
+                        @Html.ValidationMessageFor(model => model.JSStatus)
+                    </div>
+                </td>
+            </tr>           
+           
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit" style="height:35px;font-size:22px; font-family:Forte;" />
+                </td>
+            </tr>     
+            <tr>
+                <td colspan="2" align="center">
+                    @ViewBag.addpref
+                </td>
+            </tr>
+</table>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+
+ 

@@ -1,0 +1,77 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.EmployerMODEL
+
+@{
+    ViewBag.Title = "FilterJobs";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<html>
+<head>
+   <title></title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>    
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var uluru = { lat: -25.363, lng: 131.044 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=747f0ccf72d34fd9a230d03b7b296945&callback=initMap">
+    </script>
+</body>
+</html>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true) 
+   <br/> 
+    <br />
+    <br />
+<table align="center" style="text-align:left; font-family:Forte;">
+    <tr>
+        <td style="font-size:25px">
+            @Html.ActionLink("All Jobs", "ViewAllJobsJS", "Home", new { Style = "Color:black; font-family:forte;" })
+        </td>
+    </tr>
+    <tr>
+        <td height="20"></td>
+    </tr>    
+    <tr>
+        <td>Search By Location :</td>        
+        <td>   @Html.DropDownList("joblocation", ViewBag.cities as IEnumerable<SelectListItem>, "Select")      </td>        
+    </tr>
+    <tr>
+        <td>Search By Position :</td>
+        <td>   @Html.DropDownList("JobTitle", ViewBag.jobtitle as IEnumerable<SelectListItem>, "Select")      </td>        
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><input type="submit" name="Search" style="height:35px;font-size:22px;font-family:Forte;" /></td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center">
+            @ViewBag.job
+        </td>
+    </tr>
+</table>
+    <br />
+      <br/> 
+    <br />
+    <br />
+}
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>

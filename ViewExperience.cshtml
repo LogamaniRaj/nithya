@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl>
+
+
+<table align="center" border="1" style="text-align:center;align-content:center;width:1300px; font-family:Forte;">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.JSCompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSJoiningDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSDesignation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSExperience)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JSCompanyName)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.JSJoiningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSDesignation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSExperience)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditExperience", new { JSCompanyName = item.JSCompanyName })
+
+
+            </td>
+        </tr>
+    }
+
+</table>

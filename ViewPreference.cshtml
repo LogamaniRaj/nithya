@@ -1,0 +1,87 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+<fieldset>
+    <legend style="font-family:Forte">Preference Details</legend>
+    <br />
+    <table align="center" style="text-align:left; font-family:Forte;">
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSLocation1)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSLocation1)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSLocation2)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSLocation2)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSRelocation)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSRelocation)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSEmploymentType)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSEmploymentType)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSExpectedSalary)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSExpectedSalary)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSStatus)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSStatus)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                @Html.ActionLink("Edit", "EditPreference", "Home")
+            </td>
+        </tr>
+      </table>
+
+</fieldset>
+

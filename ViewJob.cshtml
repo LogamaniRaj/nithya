@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Mvc_JobPortal_FinalProject.Models.EmployerMODEL>
+
+
+<table align="center" border="1" style="text-align:center; width:1300px;font-family:Forte;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JobID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfVacancies)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobLocation)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastDateToApply)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfVacancies)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobLocation)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastDateToApply)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "ViewJobDetails", new { JobID = item.JobID })
+            </td>
+        </tr>
+    }
+
+</table>

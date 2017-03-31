@@ -1,0 +1,216 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewUser</title>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/themes/base/css")
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#JSDateofBirth").datepicker({
+                dateFormat: "dd/mm/yy", changeMonth: true, changeYear: true, maxDate: 'now'
+            });
+        });
+            </script> 
+    
+       
+            </head>
+<body style="background-image: url(/Images/register.jpg); background-size: cover; background-repeat: no-repeat;">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    <fieldset>
+        <legend style="font-family:Forte;font-size:30px;">JobSeeker Registration</legend>
+        <br />
+        <br />
+        <table align="left" style="text-align: left;font-size:23px; font-family:Forte;">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSName)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSName)
+                        @Html.ValidationMessageFor(model => model.JSName)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSEmailID)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSEmailID)
+                        @Html.ValidationMessageFor(model => model.JSEmailID)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSPassword)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSPassword)
+                        @Html.ValidationMessageFor(model => model.JSPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSPhone)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSPhone)
+                        @Html.ValidationMessageFor(model => model.JSPhone)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSDateofBirth)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.TextBox("JSDateofBirth", "")
+                        @Html.ValidationMessageFor(model => model.JSDateofBirth)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSGender)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.RadioButtonFor(model => model.JSGender, "Male")
+                        @Html.LabelFor(model => model.JSGender, "Male")
+                        @Html.RadioButtonFor(model => model.JSGender, "Female")
+                        @Html.LabelFor(model => model.JSGender, "Female")
+                        @Html.ValidationMessageFor(model => model.JSGender)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSAddress)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSAddress)
+                        @Html.ValidationMessageFor(model => model.JSAddress)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSCity)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSCity, ViewBag.cities as IEnumerable<SelectListItem>, "Select")
+                        @Html.ValidationMessageFor(model => model.JSCity)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSLinkedInID)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSLinkedInID)
+                        @Html.ValidationMessageFor(model => model.JSLinkedInID)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSSecurityQuestion)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSSecurityQuestion)
+                        @Html.ValidationMessageFor(model => model.JSSecurityQuestion)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSSecurityAnswer)*
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSSecurityAnswer)
+                        @Html.ValidationMessageFor(model => model.JSSecurityAnswer)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit" style="height:35px;font-size:22px;font-family:Forte;" />
+                </td>
+            </tr>     
+            <tr>
+                <td colspan="2" align="center">
+
+                    @ViewBag.newuser
+                </td>
+            </tr>
+          </table>
+</fieldset>
+    }
+
+    <div align="center">
+        @Html.ActionLink("Back to Login", "Login")
+    </div>
+</body>
+</html>

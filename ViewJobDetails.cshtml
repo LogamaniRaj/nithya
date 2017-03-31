@@ -1,0 +1,179 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.EmployerMODEL
+
+@{
+    ViewBag.Title = "ViewJobDetails";
+    Layout = "~/Views/Shared/Employer_Layout.cshtml";
+}
+
+
+<br />
+<br />
+<fieldset>
+    <legend style="font-family:Forte">View Job Details</legend>
+    <br />
+    <table align="center" style="text-align:left;font-family:Forte;">
+        <tr>
+            <td >
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JobID)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JobID)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JobTitle)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JobTitle)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="200px" style="text-align:left">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JobDesc)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JobDesc)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Qualifications)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Qualifications)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.NoOfVacancies)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.NoOfVacancies)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.MinExp)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.MinExp)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.MaxExp)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.MaxExp)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Salary)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Salary)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JobLocation)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JobLocation)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.IndustryType)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.IndustryType)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.FunctionalArea)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.FunctionalArea)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.PostedDate)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PostedDate)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="250px">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.LastDateToApply)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.LastDateToApply)
+                </div>
+            </td>
+        </tr>
+      </table>
+
+</fieldset>
+                <p>
+
+                    @Html.ActionLink("Back to List", "Index")
+                </p>

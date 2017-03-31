@@ -1,0 +1,160 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.EmployerMODEL
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewEmployer</title>
+</head>
+<body style="background-image: url(/Images/register.jpg); background-size: cover; background-repeat: no-repeat;">
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    @using (Html.BeginForm("NewEmployer", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+ <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    <fieldset>
+        <legend style="font-family:Forte;font-size:30px;">Employer Registration</legend>
+        <br />
+        <br />
+        <table align="left" style ="text-align: left;font-size:23px; font-family:Forte;">
+           
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CompanyLogo)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        <input type="file" name="image">
+                        @Html.ValidationMessageFor(model => model.CompanyLogo)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.EmailAddress)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.EmailAddress)
+                        @Html.ValidationMessageFor(model => model.EmailAddress)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CompanyName)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.CompanyName)
+                        @Html.ValidationMessageFor(model => model.CompanyName)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CompanyWebsite)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.CompanyWebsite)
+                        @Html.ValidationMessageFor(model => model.CompanyWebsite)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ContactNumber)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.ContactNumber)
+                        @Html.ValidationMessageFor(model => model.ContactNumber)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.EmpPassword)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.EmpPassword)
+                        @Html.ValidationMessageFor(model => model.EmpPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.EmpSecurityQuestion)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.EmpSecurityQuestion)
+                        @Html.ValidationMessageFor(model => model.EmpSecurityQuestion)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.EmpSecurityAnswer)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.EmpSecurityAnswer)
+                        @Html.ValidationMessageFor(model => model.EmpSecurityAnswer)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit" style="height:35px;font-size:22px;font-family:Forte;" />
+                </td>
+            </tr>     
+            <tr>
+                <td colspan="2" align="center">
+                    @ViewBag.newemp
+                </td>
+            </tr>
+      </table>
+</fieldset>
+    }
+    <div align="center">
+        @Html.ActionLink("Back to Login", "EmployerLogin")
+    </div>
+</body>
+</html>

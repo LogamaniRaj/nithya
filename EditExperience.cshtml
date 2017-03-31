@@ -1,0 +1,106 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    ViewBag.Title = "EditExperience";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <br />
+    <fieldset>
+        <legend style="font-family:Forte">Edit Experience</legend>
+        <br />
+        <table align="center" style="text-align:left;font-family:Forte; ">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSCompanyName)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSCompanyName)
+                        @Html.ValidationMessageFor(model => model.JSCompanyName)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSJoiningDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSJoiningDate)
+                        @Html.ValidationMessageFor(model => model.JSJoiningDate)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSEndDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSEndDate)
+                        @Html.ValidationMessageFor(model => model.JSEndDate)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSDesignation)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSDesignation)
+                        @Html.ValidationMessageFor(model => model.JSDesignation)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSExperience)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSExperience)
+                        @Html.ValidationMessageFor(model => model.JSExperience)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Edit" style="height:35px;font-size:22px;font-family:Forte;" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" align="center">
+                    @ViewBag.editexp
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+
+

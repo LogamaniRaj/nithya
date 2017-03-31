@@ -1,0 +1,48 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.EmployerMODEL
+
+@{
+    ViewBag.Title = "ViewEmpProfile";
+    Layout = "~/Views/Shared/Employer_Layout.cshtml";
+}
+<br />
+<br />
+<fieldset>
+    <legend style="font-family:Forte">My Profile</legend>
+    <br />
+    <table align="center" style="text-align:center;font-family:Forte;">
+        <tr>           
+        <td>
+            <div class="display-field">
+                <img src="/CompanyLogoImages/112.png" height="150" width="150" />
+            </div>
+        </td>
+            <td style="width:30px;"></td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CompanyName)
+                </div>
+            </td>      
+            <td style="width:30px;"></td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CompanyWebsite)
+                </div>
+            </td>   
+            <td style="width:30px;"></td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.ContactNumber)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+                @Ajax.ActionLink("View Job", "ViewJob", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" })
+            </td>
+        </tr>
+    </table>
+    <div id="result"></div>
+</fieldset>
+<p>    
+    @Html.ActionLink("Back to List", "EmployerIndex")
+</p>

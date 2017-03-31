@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Mvc_JobPortal_FinalProject.Models.EmployerMODEL>
+
+@{
+    ViewBag.Title = "ViewJobJS";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h2 style="font-family:Forte"> Jobs</h2>
+
+
+<table align="center" border="1" style="width:1400px; font-family:Forte;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyLogo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.JobLocation)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.LastDateToApply)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src=@Html.ValueFor(modelItem => item.CompanyLogo) height="150" width="150" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JobLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastDateToApply)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "ViewJobDetailsJS", new { CompanyName = item.CompanyName, JobID = item.JobID, JobTitle = item.JobTitle, JobLocation = item.JobLocation })
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,109 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmployerLogin</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/themes/base/css")
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                if ($("#EmailID").val() != "") {
+                    return true;
+                }
+                else {
+                    alert("Please Enter Email ID and password");
+                    return false;
+                }
+            })
+
+        });
+    </script>
+</head>
+<body style="background-image: url(/Images/postajob.png); background-size: cover; background-repeat: no-repeat;">
+    <div align="center">
+        @using (Html.BeginForm("EmployerLogin", "Home"))
+        {           
+              <br />
+            <br />
+            <br />
+           
+            <br />
+            <br />
+            <br />
+             <br />
+            <br />
+            <br />
+            
+            <br />
+            <br />
+            <br />
+              <br />
+          
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            
+              <table style="font-size:23px; font-family:Forte;font-weight:bold;background-color:lightblue; border:inset" width="600" height="300" >
+                  <tr>
+                      <td height="30"></td>
+                  </tr>
+                   <tr>
+                    <td width="20"></td>
+                    <td>Email ID </td>
+                    <td>@Html.TextBox("EmailID","")</td>
+                </tr>
+                <tr>
+                    <td width="20"></td>
+                    <td>Password </td>
+                    <td>@Html.Password("Password", "")</td>
+
+                </tr>
+                <tr>
+                    <td width="20"></td>
+                    <td style="font-size:17px">Keep me logged in</td>
+                    <td>@Html.CheckBox("RememberMe", false)</td>
+
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><input type="submit" value="Login" id="btn1" style="width:150px;height:30px;font-weight:bold;font-size:medium;font-family:Forte;" /></td>                   
+                   
+                    </tr>
+                  <tr>
+                      <td colspan="3" style="font-size:18px">  @ViewBag.empmsg </td>
+                  </tr>
+                <tr>                   
+                    <td colspan="3" align="center">----------------------------------or----------------------------------</td>
+                </tr>
+                <tr>                    
+                    <td colspan="3"align="center">@Html.ActionLink("Sign Up-It's Free.", "NewEmployer", "Home")</td>
+                </tr>
+                  <tr>
+                      <td align="center" colspan="3" style="font-size:18px">By Clicking Sign Up,you agree to our Opportune Door's </td>
+                  </tr>
+                  <tr>
+                      <td align="center" colspan="3" style="font-size:18px">terms of service and consent to our cookie policy & privacy policy</td>
+                  </tr>
+                  <tr>
+                      <td height="20"></td>
+                  </tr>
+                  <tr>
+                      <td colspan="3" align="center" style="font-size:14px">@Html.ActionLink("Back to Page", "FirstPage")</td>
+                  </tr>
+            </table>
+        }
+    </div>
+
+</body>
+</html>

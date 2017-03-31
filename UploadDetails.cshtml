@@ -1,0 +1,90 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    ViewBag.Title = "UploadDetails";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("UploadDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+     <br />
+    <br />
+        <fieldset>
+            <legend style="font-family:Forte">Upload Details</legend>
+        <br />
+        <table align="center" style="text-align:left; font-family:Forte;">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSPhoto)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        <input type="file" name="photo">
+                        @Html.ValidationMessageFor(model => model.JSPhoto)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Resume)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        <input type="file" name="resume">
+                        @Html.ValidationMessageFor(model => model.Resume)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.idproof)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.idproof)
+                        @Html.ValidationMessageFor(model => model.idproof)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.idproofdoc)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        <input type="file" name="idproofdoc">
+                        @Html.ValidationMessageFor(model => model.idproofdoc)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Upload" style="font-family: Forte; height: 35px; font-size: 22px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    @ViewBag.upload
+                </td>
+            </tr>
+         </table>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+

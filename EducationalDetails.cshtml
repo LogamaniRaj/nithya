@@ -1,0 +1,133 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    ViewBag.Title = "EducationalDetails";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <br />
+    <fieldset>
+        <legend style="font-family:Forte">Educational Details</legend>           
+      <br />
+        <table align="center" style="text-align:left;font-family:Forte;">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSHighestEducation)
+                    </div>
+                </td>
+                <td >
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSHighestEducation, ViewBag.highesteducation as IEnumerable<SelectListItem>, "Select", new { Style = "width:265px" })
+                        @Html.ValidationMessageFor(model => model.JSHighestEducation)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSCourse)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSCourse, ViewBag.Course as IEnumerable<SelectListItem>, "Select", new { Style="width:265px"})
+                        @Html.ValidationMessageFor(model => model.JSCourse)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSSpecialization)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSSpecialization, ViewBag.specialization as IEnumerable<SelectListItem>, "Select", new { Style = "width:265px" })
+                        @Html.ValidationMessageFor(model => model.JSSpecialization)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSCourseType)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.JSCourseType, ViewBag.CourseType as IEnumerable<SelectListItem>, "Select", new { Style = "width:265px" })
+                        @Html.ValidationMessageFor(model => model.JSCourseType)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSUniversity)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSUniversity)
+                        @Html.ValidationMessageFor(model => model.JSUniversity)
+                    </div>
+                </td>
+            </tr>
+         
+            <tr>
+                <td >
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSPassOutYear)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSPassOutYear)
+                        @Html.ValidationMessageFor(model => model.JSPassOutYear)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.JSPercentage)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.JSPercentage)
+                        @Html.ValidationMessageFor(model => model.JSPercentage)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit" style="height:35px;font-size:22px;font-family:Forte;" />
+                </td>
+            </tr>           
+            <tr>
+                <td colspan="2" align="center">
+                    @ViewBag.addedu
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+
+
+

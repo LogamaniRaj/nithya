@@ -1,0 +1,139 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+@{
+    ViewBag.Title = "ViewProfile";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<br />
+<br />
+<fieldset>
+    <legend style="font-family:Forte">My Profile</legend>
+    <br />   
+    <table align="center" style="text-align:left;font-family:Forte; ">
+        <tr>
+            <td>
+                <div class="display-label">
+                    Name
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSName)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="display-label">
+                    Phone Number
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSPhone)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    Date of Birth
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSDateofBirth)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    Gender
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSGender)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    Address
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSAddress)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    City
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSCity)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    LinkedIn ID
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSLinkedInID)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Ajax.ActionLink("View Educational Details", "ViewEducationalDetails",
+                         new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" })
+
+            </td>
+            <td width="1px;"></td>
+            <td>
+                @Ajax.ActionLink("View Preference", "ViewPreference",
+                         new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" })
+
+            </td>
+            <td width="20px;"></td>
+            </tr>
+            <tr>
+            <td>
+                @Ajax.ActionLink("View Experience", "ViewExperience",
+                         new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" })
+
+            </td>
+            <td width="20px;"></td>
+            <td>
+                @Ajax.ActionLink("View Skill Set", "ViewSkillSet",
+                         new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" })
+
+            </td>
+             </tr>
+      
+
+
+
+    </table>
+    <div id="result"></div> 
+</fieldset>
+
+
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>

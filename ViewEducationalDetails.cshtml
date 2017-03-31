@@ -1,0 +1,109 @@
+﻿@model Mvc_JobPortal_FinalProject.Models.JobSeekersMODEl
+
+
+<fieldset>
+    <legend style="font-family:Forte">Educational Details</legend>
+    <br />
+    <table align="center" style="text-align:left; font-family:Forte;">
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSHighestEducation)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSHighestEducation)
+                </div>
+             
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSCourse)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSCourse)
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSSpecialization)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSSpecialization)
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSUniversity)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSUniversity)
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSCourseType)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSCourseType)
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSPassOutYear)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSPassOutYear)
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.JSPercentage)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.JSPercentage)
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                @Html.ActionLink("Edit", "EditEducation", "Home")
+
+            </td>
+        </tr>
+       
+</table>
+
+</fieldset>
+
